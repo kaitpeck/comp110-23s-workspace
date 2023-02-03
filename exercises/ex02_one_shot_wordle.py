@@ -32,6 +32,7 @@ s: int = 0
 
 # checking to see if the individual characters are right
 while i < secret_length:
+    s: int = 0
     if guess[i] == secret_word[i]:
         w = w + GREEN_BOX   # this letter is in the correct space
     else: 
@@ -39,10 +40,11 @@ while i < secret_length:
         while cond is False and i < secret_length and s < secret_length:
             if guess[i] == secret_word[s]:
                 cond = True
-                w = w + YELLOW_BOX  # this letter is in the incorrect space, but is somewhere else in the word
+                w = w + YELLOW_BOX # this letter is in the incorrect space, but is somewhere else in the word
+                s = s + 1
             else:
                 s = s + 1
         if cond is False and s == secret_length:
-            w = w + WHITE_BOX  # this letter is not in the word at all
+            w = w + WHITE_BOX  #  this letter is not in the word at all
     i = i + 1
-print(w)  #tells you how accurate your characters are to the secret word
+print(w)  #  tells you how accurate your characters are to the secret word
