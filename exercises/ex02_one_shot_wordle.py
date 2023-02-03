@@ -1,10 +1,10 @@
 """one shot wordle"""
 
-__author__ : "730314385"
+__author__ = "730314385"
 
 secret_word: str = "python"
 playing: bool = True
-secret_length: str = len(secret_word)
+secret_length: int = len(secret_word)
 
 guess: str = str(input(f"What is your {secret_length}-letter guess? "))
 guess_length: int = len(guess)
