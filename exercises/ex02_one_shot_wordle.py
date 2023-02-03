@@ -1,4 +1,4 @@
-"""one shot wordle"""
+"""one shot wordle."""
 
 __author__ = "730314385"
 
@@ -28,21 +28,21 @@ YELLOW_BOX: str = "\U0001F7E8"
 
 i: int = 0
 w: str = ""
-s: str = 0
+s: int = 0
 
 # checking to see if the individual characters are right
 while i < secret_length:
     if guess[i] == secret_word[i]:
-        w = w + GREEN_BOX #this letter is in the correct space
+        w = w + GREEN_BOX   # this letter is in the correct space
     else: 
-        available: str = False
-        while available == False and i < secret_length and s < secret_length:
+        cond: bool = False
+        while cond is False and i < secret_length and s < secret_length:
             if guess[i] == secret_word[s]:
-                available = True
-                w = w + YELLOW_BOX #this letter is in the incorrect space, but is somewhere else in the word
+                cond = True
+                w = w + YELLOW_BOX  # this letter is in the incorrect space, but is somewhere else in the word
             else:
                 s = s + 1
-        if available == False and s == secret_length:
-            w = w + WHITE_BOX #this letter is not in the word at all
+        if cond is False and s == secret_length:
+            w = w + WHITE_BOX  # this letter is not in the word at all
     i = i + 1
-print(w) #tells you how accurate your characters are to the secret word
+print(w)  #tells you how accurate your characters are to the secret word
