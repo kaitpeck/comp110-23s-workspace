@@ -52,7 +52,7 @@ def plant(flower_type: str) -> None:
     watering(flower_type)
 
 
-def watering(flower_type: str) -> str:
+def watering(flower_type: str) -> None:
     """Should we water our garden?"""
     global flower
     water: str = input("Do you want to water our plant? 'yes' or 'no': ")
@@ -64,7 +64,7 @@ def watering(flower_type: str) -> str:
     sunshine(flower_type)
 
 
-def sunshine(flower_type: str) -> str:
+def sunshine(flower_type: str) -> None:
     """Is there enough sunshine for our garden?""" 
     global flower
     from random import choice
@@ -80,7 +80,7 @@ def sunshine(flower_type: str) -> str:
     results(flower_type)
 
 
-def results(flower_type: str) -> str:
+def results(flower_type: str) -> None:
     """Are you ready for the big reveal of your new plant?"""
     global flower
     ready: str = input("Do you want to see your new plant? 'yes' or 'no': ")
